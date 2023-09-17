@@ -1,10 +1,18 @@
 //Media Queries
+const navbar = document.getElementById("navMobile");
+const slidePhoto = document.querySelector(".slide");
+const navButtons = document.querySelector(".navButtons");
 
 function myFunction(x) {
   if (x.matches) {
-    document.body.style.backgroundColor = "black";
+    navbar.style.right = "-100vw";
+    setTimeout(() => {
+      slidePhoto.style.left = "0px";
+    }, 2600);
   } else {
-    document.body.style.backgroundColor = "white";
+    setTimeout(() => {
+      slidePhoto.style.left = "150px";
+    }, 2600);
   }
 }
 
@@ -12,12 +20,23 @@ var x = window.matchMedia("(max-width: 700px)");
 myFunction(x);
 x.addListener(myFunction);
 
+// navbar section
+
+const navbarToggle = document.querySelector(".menuBurger");
+const closeToggle = document.querySelector(".closeMenu");
+
+navbarToggle.addEventListener("click", () => {
+  navbar.style.right = "0px";
+});
+closeToggle.addEventListener("click", () => {
+  navbar.style.right = "-100vw";
+});
+
 // intro section
 
 let intro = document.querySelector(".intro");
 let logo = document.querySelector(".logoIntro");
 let logoSpan = document.querySelectorAll(".welcomeLogo");
-let slidePhoto = document.querySelector(".slide");
 
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -39,10 +58,6 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       intro.style.top = "-100vh";
     }, 2300);
-
-    setTimeout(() => {
-      slidePhoto.style.left = "150px";
-    }, 2600);
   });
 });
 

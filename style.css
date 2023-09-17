@@ -18,11 +18,7 @@ body {
   top: 0px;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(7, 119, 87) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(7, 119, 87) 80%);
   transition: all 1s ease 0s;
   overflow: hidden;
 }
@@ -72,7 +68,12 @@ body {
   align-items: center;
   z-index: 1;
 }
-
+.menuBurger {
+  display: none;
+}
+.closeMenu {
+  display: none;
+}
 .topHeader nav {
   display: flex;
   flex-direction: column;
@@ -83,10 +84,6 @@ body {
 .topHeader nav a {
   font-size: 0.8rem;
   transition: all 0.3s ease 0s;
-}
-
-.topHeader nav a:hover {
-  color: rgb(6, 101, 74);
 }
 
 .topHeader .navButtons button {
@@ -135,11 +132,7 @@ header {
 .topImageSlides {
   width: 72vw;
   min-height: 500px;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(209, 193, 122) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(209, 193, 122) 80%);
   overflow: hidden;
 }
 
@@ -217,11 +210,7 @@ header {
   left: 19vw;
   top: 365px;
   border: unset;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(7, 119, 87) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(7, 119, 87) 80%);
   color: white;
   border-radius: 40px;
   letter-spacing: 7px;
@@ -251,11 +240,7 @@ header {
 .title {
   width: 550px;
   height: 130px;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(7, 119, 87) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(7, 119, 87) 80%);
   margin: 30px 0px;
   position: relative;
 }
@@ -361,11 +346,7 @@ header {
 
 .checkoutBtn {
   border: unset;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(7, 119, 87) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(7, 119, 87) 80%);
   color: white;
   border-radius: 40px;
   padding: 10px 22px;
@@ -440,11 +421,7 @@ header {
   padding: 6px 8px;
   color: white;
   text-align: center;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(7, 119, 87) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(7, 119, 87) 80%);
 }
 
 .item input:focus {
@@ -458,11 +435,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .itemBtn {
   border: unset;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(7, 119, 87) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(7, 119, 87) 80%);
   color: white;
   border-radius: 40px;
   padding: 7px 22px;
@@ -525,11 +498,7 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
   width: 100%;
   height: 120px;
-  background: linear-gradient(
-    253deg,
-    rgb(5, 172, 125) 16%,
-    rgb(7, 119, 87) 80%
-  );
+  background: linear-gradient(253deg, rgb(5, 172, 125) 16%, rgb(7, 119, 87) 80%);
 }
 
 .content-text {
@@ -583,13 +552,16 @@ input[type="number"]::-webkit-outer-spin-button {
 
 footer {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0px 16vw;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+  column-gap: 130px;
+  /* margin: 0px 16vw; */
   align-items: start;
   color: rgb(133, 133, 133);
   line-height: 20px;
@@ -674,5 +646,156 @@ footer {
   opacity: 0.04;
 }
 
-@media (min-width = "375px") {
+@media (min-width: 320px) and (max-width: 575px) {
+  .intro img {
+    width: 200vw;
+  }
+
+  .topHeader {
+    left: 0;
+    transform: unset;
+    top: 10px;
+    padding: 15px 20px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: unset;
+  }
+  .topHeader nav {
+    position: fixed;
+    text-align: right;
+    top: -10px;
+    padding: 30px 20px 0 0;
+    height: 110vh;
+    background: #016b4d;
+    right: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    transition: 0.4s;
+  }
+
+  .topHeader nav ul {
+    flex-direction: column;
+  }
+  .menuBurger {
+    display: block;
+    cursor: pointer;
+  }
+  .closeMenu {
+    display: block;
+    cursor: pointer;
+    margin-right: 80%;
+  }
+
+  .topImageSlides h1 {
+    font-size: 1.4rem;
+    left: 5vw;
+  }
+
+  .topImageSlides p {
+    left: 5vw;
+    top: 245px;
+  }
+  .headerButton {
+    left: 7vw;
+    top: 320px;
+    letter-spacing: 4px;
+    padding: 12px 36px;
+    font-size: 0.7rem;
+  }
+  .title {
+    width: 100%;
+  }
+  .title h2 {
+    left: 0;
+    margin-left: 20px;
+  }
+
+  .title img:nth-child(2) {
+    right: 0;
+  }
+  .title img:nth-child(3) {
+    width: 200px;
+    top: 30px;
+  }
+  .title img:nth-child(4) {
+    left: -20px;
+    width: 230px;
+    top: -100px;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .checkoutBtn {
+    padding: 8px 21px;
+  }
+  .content-text {
+    justify-content: unset;
+    gap: 0;
+  }
+  .content-text p {
+    display: none;
+  }
+  .apps-download img {
+    width: 150px;
+    margin: 40px 0 40px 40px;
+  }
+  .slide img {
+    width: 500px;
+  }
+  .topImageSlides .slide {
+    top: 145px;
+  }
+  .bottom-option {
+    gap: 0;
+  }
+  .item-list {
+    width: 90vw;
+    min-height: 120px;
+  }
+  .item-list img {
+    width: 105px;
+    margin: -10px -20px 10px -27px;
+  }
+  .item-details p {
+    font-size: 0.6rem;
+  }
+  h3 {
+    font-size: 0.8rem;
+  }
+  .item-remove {
+    font-size: 0.6rem;
+    margin-right: 10px;
+  }
+  .item-quantity {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .decoration-line {
+    width: 90vw;
+  }
+  .total-price,
+  .total-items-cart {
+    width: 90vw;
+  }
+  .footer-navigation {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0;
+    justify-content: unset;
+    margin-left: 40px;
+    row-gap: 10px;
+    column-gap: 0;
+  }
+  .footer-navigation img {
+    margin: 0;
+  }
+  .footerLogo {
+    grid-row: 1/3;
+    grid-column: 3;
+    margin-top: 40px;
+  }
 }
