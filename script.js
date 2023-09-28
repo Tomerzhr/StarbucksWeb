@@ -261,8 +261,9 @@ function removeItem(element) {
 
   if ((cartArray = JSON.parse(sessionStorage.getItem("shopping-cart")))) {
     let index = cartArray.findIndex((item) => item.id == id);
-    cartArray.shift(index);
+    cartArray.splice(index, 1);
     sessionStorage.setItem("shopping-cart", JSON.stringify(cartArray));
+    console.log(index);
   }
   if (cartArray.length == 0) {
     sessionStorage.removeItem("shopping-cart");
