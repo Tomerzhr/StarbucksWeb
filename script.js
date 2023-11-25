@@ -63,13 +63,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // item section classes
 
-function Item(id, name, desc, price, photoBig, photoSmall) {
-  this.id = id;
-  this.name = name;
-  this.desc = desc;
-  this.price = price;
-  this.photoBig = photoBig;
-  this.photoSmall = photoSmall;
+class Item {
+  constructor(id, name, desc, price, photoBig, photoSmall) {
+    this.id = id;
+    this.name = name;
+    this.desc = desc;
+    this.price = price;
+    this.photoBig = photoBig;
+    this.photoSmall = photoSmall;
+  }
 }
 
 const items = [
